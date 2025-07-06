@@ -10,7 +10,7 @@ export default function MyForm() {
         event.preventDefault();
 
         try {
-            const response = await axios.post('http://the-news-daily.onrender.com/login', { email, pwd });
+            const response = await axios.post('https://the-news-daily.onrender.com/login', { email, pwd });
             if (response.status === 200) {
                 console.log('User exists');
                 alert("You're Logged In now!")
