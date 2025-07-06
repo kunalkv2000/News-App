@@ -19,7 +19,7 @@ export default function MyForm() {
         }
         const hashedPassword = await bcrypt.hash(password, 5);
         try {
-            let result = await fetch("http://127.0.0.1:5000/register", {
+            let result = await fetch("https://the-news-daily.onrender.com/register", {
                 method: "POST",
                 body: JSON.stringify({ name, email, password: hashedPassword, Interests }),
                 headers: { 'Content-Type': 'application/json' }
@@ -34,7 +34,7 @@ export default function MyForm() {
             setInterests([]);
             navigate('/');
         } catch (error) {
-            const response = await axios.post('http://127.0.0.1:5000/login', { email });
+            const response = await axios.post('https://the-news-daily.onrender.com/login', { email });
             if (response.status === 200) {
                 alert("The user with this email is already exist. Please Login instead!")
                 navigate('/Form');
