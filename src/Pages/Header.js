@@ -17,7 +17,7 @@ export default function Header() {
             const email = localStorage.getItem("email");
             if (email) {
                 try {
-                    const res = await axios.get(`https://the-news-daily.onrender.com/user?email=${encodeURIComponent(email)}`);
+                    const res = await axios.get(`http://127.0.0.1:5000/user?email=${encodeURIComponent(email)}`);
                     setUser(res.data.user);
                     localStorage.setItem("user", JSON.stringify(res.data.user));
                 } catch (err) {
@@ -60,13 +60,13 @@ export default function Header() {
 
                   <div class="hidden lg:flex lg:ml-16 lg:items-center lg:justify-center lg:space-x-10">
                       <div class="flex items-center space-x-12">
-                          <a title="" class="text-base font-medium text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> <Link className={`nav-link ${location.pathname === "/" ? "active" : ""}`} to="/" id="general">Home</Link> </a>
+                          <a href="#" title="" class="text-base font-medium text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> <Link className={`nav-link ${location.pathname === "/" ? "active" : ""}`} to="/" id="general">Home</Link> </a>
 
-                          <a title="" class="text-base font-medium text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> <Link className={`nav-link ${location.pathname === "/Contact" ? "active" : ""}`} to="/Contact" id="contact">Contact</Link> </a>
+                          <a href="#" title="" class="text-base font-medium text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> <Link className={`nav-link ${location.pathname === "/Contact" ? "active" : ""}`} to="/Contact" id="contact">Contact</Link> </a>
 
-                          <a title="" class="text-base font-medium text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> <Link className={`nav-link ${location.pathname === "/About" ? "active" : ""}`} to="/About" id="about">About</Link> </a>
+                          <a href="#" title="" class="text-base font-medium text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> <Link className={`nav-link ${location.pathname === "/About" ? "active" : ""}`} to="/About" id="about">About</Link> </a>
 
-                          <a title="" class="text-base font-medium text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> <Link className={`nav-link ${location.pathname === "/News_Sources" ? "active" : ""}`} to="/News_Sources" id="sources">Sources</Link> </a>
+                          <a href="#" title="" class="text-base font-medium text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> <Link className={`nav-link ${location.pathname === "/News_Sources" ? "active" : ""}`} to="/News_Sources" id="sources">Sources</Link> </a>
                       </div>
 
                       <div class="w-px h-5 bg-gray-300"></div>
