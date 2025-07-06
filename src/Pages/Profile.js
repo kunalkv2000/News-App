@@ -18,7 +18,7 @@ export default function Profile() {
       setLoading(false);
       return;
     }
-    axios.get(`http://127.0.0.1:5000/user?email=${encodeURIComponent(email)}`)
+    axios.get(`https://the-news-daily.onrender.com/user?email=${encodeURIComponent(email)}`)
       .then(res => {
         setUser(res.data.user);
         setSelectedInterests(res.data.user.Interests || []);
@@ -44,7 +44,7 @@ export default function Profile() {
   const handleUpdate = async () => {
     try {
       const email = user.email;
-      const response = await axios.put(`http://127.0.0.1:5000/user`, {
+      const response = await axios.put(`https://the-news-daily.onrender.com/user`, {
         email,
         Interests: selectedInterests
       }, {
