@@ -14,7 +14,7 @@ export default function EmailTemplate() {
       setLoading(false);
       return;
     }
-    axios.get(`http://the-news-daily.onrender.com/user?email=${encodeURIComponent(email)}`)
+    axios.get(`https://the-news-daily.onrender.com/user?email=${encodeURIComponent(email)}`)
       .then(res => {
         setUser(res.data.user);
         return res.data.user.Interests || [];
@@ -62,7 +62,7 @@ export default function EmailTemplate() {
 
   const handleSendEmail = async () => {
     try {
-      await axios.post('http://127.0.0.1:5000/send-news-email', {
+      await axios.post('https://the-news-daily.onrender.com/send-news-email', {
         to: user.email,
         subject: 'Your Personalized News Digest',
         html: buildEmailHtml()
