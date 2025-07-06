@@ -14,7 +14,7 @@ export default function EmailTemplate() {
       setLoading(false);
       return;
     }
-    axios.get(`http://127.0.0.1:5000/user?email=${encodeURIComponent(email)}`)
+    axios.get(`http://the-news-daily.onrender.com/user?email=${encodeURIComponent(email)}`)
       .then(res => {
         setUser(res.data.user);
         return res.data.user.Interests || [];
