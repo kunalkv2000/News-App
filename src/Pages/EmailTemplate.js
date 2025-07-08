@@ -14,7 +14,7 @@ export default function EmailTemplate() {
       setLoading(false);
       return;
     }
-    axios.get(`https://the-news-daily.onrender.com/user?email=${encodeURIComponent(email)}`)
+    axios.get(`https://thenewsdaily.vercel.app//user?email=${encodeURIComponent(email)}`)
       .then(res => {
         setUser(res.data.user);
         return res.data.user.Interests || [];
@@ -62,7 +62,7 @@ export default function EmailTemplate() {
 
   const handleSendEmail = async () => {
     try {
-      await axios.post('https://the-news-daily.onrender.com/send-news-email', {
+      await axios.post('https://thenewsdaily.vercel.app/send-news-email', {
         to: user.email,
         subject: 'Your Personalized News Digest',
         html: buildEmailHtml()
