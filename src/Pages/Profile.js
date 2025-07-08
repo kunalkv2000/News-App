@@ -18,7 +18,7 @@ export default function Profile() {
       setLoading(false);
       return;
     }
-    axios.get(`https://the-news-daily.onrender.com/user?email=${encodeURIComponent(email)}`)
+    axios.get(`https://thenewsdaily.vercel.app/user?email=${encodeURIComponent(email)}`)
       .then(res => {
         setUser(res.data.user);
         setSelectedInterests(res.data.user.Interests || []);
@@ -44,7 +44,7 @@ export default function Profile() {
   const handleUpdate = async () => {
     try {
       const email = user.email;
-      const response = await axios.put(`https://the-news-daily.onrender.com/user`, {
+      const response = await axios.put(`https://thenewsdaily.vercel.app/user`, {
         email,
         Interests: selectedInterests
       }, {
