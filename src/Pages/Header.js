@@ -17,7 +17,7 @@ export default function Header() {
             const email = localStorage.getItem("email");
             if (email) {
                 try {
-                    const res = await axios.get(`https://the-news-daily.onrender.com//user?email=${encodeURIComponent(email)}`);
+                    const res = await axios.get(`https://the-news-daily.onrender.com/user?email=${encodeURIComponent(email)}`);
                     setUser(res.data.user);
                     localStorage.setItem("user", JSON.stringify(res.data.user));
                 } catch (err) {
